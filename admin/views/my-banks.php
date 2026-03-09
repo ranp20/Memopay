@@ -218,6 +218,7 @@ if(!isset($_SESSION['admin_sessmemopay'])){
 		</div>
 	</main>
 	<script type="text/javascript" src="<?= $url ?>js/main.js"></script>
+	<script type="text/javascript" src="<?= $url; ?>js/helper.js"></script>
 	<script type="text/javascript" src="<?= $url ?>js/actions_pages/transbanks.js"></script>
 </body>
 </html>

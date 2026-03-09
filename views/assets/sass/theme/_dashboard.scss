@@ -200,6 +200,7 @@
 									align-self: self-end;
 							    justify-self: flex-end;
 							    margin-left: auto;
+									border: unset;
 							    &:hover{
 							    	background-color: darken($theme_color_buttons, 4%);
 							    }

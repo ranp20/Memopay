@@ -1,15 +1,17 @@
 <?php
 	$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
   // CONFIGURACIÓN - LOCALHOST
-  $url =  $actual_link . "/Memopay/";
-  $url_defaultURL =  $actual_link . "/Memopay";
-  $url_adm_assets =  $actual_link . "/Memopay/admin/";
+  
+  // $url =  $actual_link . "/Memopay/";
+  // $url_defaultURL =  $actual_link . "/Memopay";
+  // $url_adm_assets =  $actual_link . "/Memopay/admin/";
+
   // CONFIGURACIÓN - SERVIDOR
-  /*
+  
   $url =  $actual_link . "/";
   $url_defaultURL =  $actual_link . "/";
   $url_adm_assets =  $actual_link . "/admin/";
-  */
+  
 ?>
 <meta charset="UTF-8"/>
 <meta http-equiv="content-type" content="text/html; charset=utf-8"/>

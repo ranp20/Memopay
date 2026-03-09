@@ -1,6 +1,9 @@
 $(function(){
   listTranferBanks();
 });
+var locationthisGET = window.location.href;
+var domainthisGET = new URL(locationthisGET).origin;
+var domainByControllers = domainthisGET+"/admin/";
 // ------------ LIMITAR EL MÁXIMO DE NÚMEROS EN NÚMERO DE CUENTA
 $("#rucAccBank").on('keyup keypress blur change', function(e) {
     //return false if not 0-9
@@ -30,7 +33,7 @@ $("#n_account").on('keyup keypress blur change', function(e) {
 $(document).on("click", "#btn-FakeListTypeCurr", function(){
   $("#c-listitems-typecurrency").addClass("show");
    $.ajax({
-    url: "../admin/controllers/c_list-currency.php",
+    url: domainbyadm.controllers+"c_list-currency.php",
     method: "POST",
     datatype: "JSON",
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -64,7 +67,7 @@ $(document).on("click", ".cont-modalbootstrap__form--controlSelect--m--item", fu
 $(document).on("click", "#btn-FakeListTypeAccount", function(){
   $("#c-listitems-typeaccount").addClass("show");
    $.ajax({
-    url: "../admin/controllers/c_list-type-accounts.php",
+    url: domainbyadm.controllers+"c_list-type-accounts.php",
     method: "POST",
     datatype: "JSON",
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -125,7 +128,7 @@ $(document).on('submit', '#form-add-transferbank', function(e){
     */
 
     $.ajax({
-      url: "../admin/controllers/c_add-transferbank.php",
+      url: domainbyadm.controllers+"c_add-transferbank.php",
       method: "POST",
       data: formdata,
       contentType: false,
@@ -151,7 +154,7 @@ $(document).on('submit', '#form-add-transferbank', function(e){
 // ------------ LISTAR TRANFERBANKS
 function listTranferBanks(searchVal){ 
   $.ajax({
-    url: "../admin/controllers/c_list-transferbanks.php",
+    url: domainbyadm.controllers+"c_list-transferbanks.php",
     method: "POST",
     datatype: "JSON",
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -226,7 +229,7 @@ $(document).on('keyup', '#searchtransferbanks', function() {
 $(document).on("click", "#btn-FakeListTypeCurr-Update", function(){
   $("#c-listitems-typecurrency-Update").addClass("show");
    $.ajax({
-    url: "../admin/controllers/c_list-currency.php",
+    url: domainbyadm.controllers+"c_list-currency.php",
     method: "POST",
     datatype: "JSON",
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -260,7 +263,7 @@ $(document).on("click", ".cont-modalbootstrapupdate__form--controlSelect--m--ite
 $(document).on("click", "#btn-FakeListTypeAccount-Update", function(){
   $("#c-listitems-typeaccount-Update").addClass("show");
    $.ajax({
-    url: "../admin/controllers/c_list-type-accounts.php",
+    url: domainbyadm.controllers+"c_list-type-accounts.php",
     method: "POST",
     datatype: "JSON",
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -374,7 +377,7 @@ $(document).on('submit', '#form-update-transferbank', function(e){
     formdata.append("id", $("#idupdate-transferbank").val());
 
     $.ajax({
-      url: "../admin/controllers/c_update-transferbanks.php",
+      url: domainbyadm.controllers+"c_update-transferbanks.php",
       method: "POST",
       data: formdata,
       contentType: false,
@@ -403,7 +406,7 @@ $(document).on('click', '#btndelete-transferbank', function(e){
   e.preventDefault();
 	var id = $('#iddelete-transferbank').val();
   $.ajax({
-    url: "../admin/controllers/c_delete-transferbanks.php",
+    url: domainbyadm.controllers+"c_delete-transferbanks.php",
     method: "POST",
     data: {id : id},
   }).done((e) => {

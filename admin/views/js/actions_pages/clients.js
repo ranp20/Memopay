@@ -2,6 +2,9 @@ $(() => {
   //listClients();
   listAllClients();
 });
+var locationthisGET = window.location.href;
+var domainthisGET = new URL(locationthisGET).origin;
+var domainByControllers = domainthisGET+"/admin/";
 $(document).on('change', '#selOpts-ValidBiometricFilter', function(e){
   var optionSel = $(this).find("option:selected").attr("data-short");
   var optionSelText = $(this).find("option:selected").text();
@@ -35,7 +38,7 @@ var listAllClients = (optionSel = null) => {
   var tblClients = $("#tbl_clients").DataTable({
     "destroy": true,
     "ajax":{
-      "url": "../admin/controllers/c_list-clients_byTypeValidationBio.php",
+      "url": domainbyadm.controllers+"c_list-clients_byTypeValidationBio.php",
       "data": { option : optionSel },
       "type": "POST",
     },
@@ -271,7 +274,7 @@ var listAllClients = (optionSel = null) => {
 // ------------ LISTAR BANCOS
 function listClients(searchVal){ 
   $.ajax({
-    url: "../admin/controllers/c_list-clients.php",
+    url: domainbyadm.controllers+"c_list-clients.php",
     method: "POST",
     datatype: "JSON",
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -335,7 +338,7 @@ $(document).on('submit', '#form-update-client', function(e){
   e.preventDefault();
   var formdata = $(this).serializeArray();
   $.ajax({
-    url: "../admin/controllers/c_update-client-coupon.php",
+    url: domainbyadm.controllers+"c_update-client-coupon.php",
     method: "POST",
     dataType: 'JSON',
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',

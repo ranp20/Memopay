@@ -1,6 +1,9 @@
 $(function(){
   listBanks();
 });
+var locationthisGET = window.location.href;
+var domainthisGET = new URL(locationthisGET).origin;
+var domainByControllers = domainthisGET+"/admin/";
 // ------------ AGREGAR BANCO
 $(document).on('submit', '#form-add-bank', function(e){
   e.preventDefault();
@@ -11,7 +14,7 @@ $(document).on('submit', '#form-add-bank', function(e){
   }
   formdata.append("name", $('#name').val());
   $.ajax({
-    url: "../admin/controllers/c_add-bank.php",
+    url: domainbyadm.controllers+"c_add-bank.php",
     method: "POST",
     data: formdata,
     contentType: false,
@@ -30,7 +33,7 @@ $(document).on('submit', '#form-add-bank', function(e){
 // ------------ LISTAR RESULTADOS
 function listBanks(searchVal){ 
   $.ajax({
-    url: "../admin/controllers/c_list-banks.php",
+    url: domainbyadm.controllers+"c_list-banks.php",
     method: "POST",
     datatype: "JSON",
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -116,7 +119,7 @@ $(document).on('submit', '#form-update-bank', function(e){
   formdata.append("id", $('#idupdate-bank').val());
 
   $.ajax({
-    url: "../admin/controllers/c_update-bank.php",
+    url: domainbyadm.controllers+"c_update-bank.php",
     method: "POST",
     data: formdata,
     contentType: false,
@@ -142,7 +145,7 @@ $(document).on('click', '#btndelete-bank', function(e){
   e.preventDefault();
 	var id = $('#iddelete-bank').val();
   $.ajax({
-    url: "../admin/controllers/c_delete-bank.php",
+    url: domainbyadm.controllers+"c_delete-bank.php",
     method: "POST",
     data: {id : id},
   }).done((e) => {

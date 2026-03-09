@@ -58,6 +58,7 @@ $url =  $actual_link . "/admin/views/";
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript" src="<?= $url; ?>js/helper.js"></script>
 	<script type="text/javascript" src="<?= $url ?>js/actions_pages/login-adm.js"></script>
 </body>
 </html>

@@ -57,12 +57,12 @@ require_once '../php/process_data-list.php';
 							</div>
 							<p class="cControlP__cont--containDash--c--cCFinalDivise--cContInfo--infoStepInit">Una vez realizado coloque el número de operación <b>emitido por su banco</b> dentro del casillero mostrado debajo darle a enviar.</p>
 							<div class="cControlP__cont--containDash--c--cCFinalDivise--cContInfo--showTitleinfo">
-								<a href="javascript:void(0);" data-showModalHov="transfer_numOpBankExample">
+								<button type="button" data-showModalHov="transfer_numOpBankExample">
 									<span>¿Dónde lo encuentro?</span>
 									<span>
 										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-3"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
 									</span>
-								</a>
+								</button>
 								<div class="cControlP__cont--containDash--c--cCFinalDivise--cContInfo--showTitleinfo__cModalNumOpBankExample">
 									
 								</div>
@@ -76,9 +76,9 @@ require_once '../php/process_data-list.php';
 									<h3 class="cControlP__cont--containDash--c--cCFinalDivise--cContInfo--cFormSendtransac--form--Step">SOLO POSEES 15 MINUTOS PARA ENVIARNOS EL NRO. DE TU OPERACIÓN.</h3>
 									<div class="cControlP__cont--containDash--c--cCFinalDivise--cContInfo--cFormSendtransac--form--cBtns">
 										<button type="submit" class="cControlP__cont--containDash--c--cCFinalDivise--cContInfo--cFormSendtransac--form--cBtns--btnTransac">Enviar</button>
-										<a href="javascript:void(0);" class="cControlP__cont--containDash--c--cCFinalDivise--cContInfo--cFormSendtransac--form--cBtns--cancelLink" id="ipt_tOperCancel">
+										<button type="button" class="cControlP__cont--containDash--c--cCFinalDivise--cContInfo--cFormSendtransac--form--cBtns--cancelLink" id="ipt_tOperCancel">
 											<span>Cancelar</span>
-										</a>
+										</button>
 									</div>
 								</form>
 							</div>

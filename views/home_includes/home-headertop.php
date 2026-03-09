@@ -15,22 +15,22 @@
 				<span class="cMain__cont--infTop--hTop--citem--cm--Tm">Menú</span>
 				<ul class="cMain__cont--infTop--hTop--citem--cm--m">
 					<li class="cMain__cont--infTop--hTop--citem--cm--m--item d-non_desk">
-						<a href="javascript:void(0);" class="cMain__cont--infTop--hTop--citem--cm--m--link">¿Cómo funciona?</a>
+						<button type="button" class="cMain__cont--infTop--hTop--citem--cm--m--link">¿Cómo funciona?</button>
 					</li>
 					<li class="cMain__cont--infTop--hTop--citem--cm--m--item">
-						<a href="javascript:void(0);" class="cMain__cont--infTop--hTop--citem--cm--m--link">Nosotros</a>
+						<button type="button" class="cMain__cont--infTop--hTop--citem--cm--m--link">Nosotros</button>
 					</li>
 					<li class="cMain__cont--infTop--hTop--citem--cm--m--item d-non_desk">
-						<a href="javascript:void(0);" class="cMain__cont--infTop--hTop--citem--cm--m--link">¡Gana con tus referidos!</a>
+						<button type="button" class="cMain__cont--infTop--hTop--citem--cm--m--link">¡Gana con tus referidos!</button>
 					</li>
 					<li class="cMain__cont--infTop--hTop--citem--cm--m--item d-non_desk">
-						<a href="javascript:void(0);" class="cMain__cont--infTop--hTop--citem--cm--m--link">¿Por qué Memopay?</a>
+						<button type="button" class="cMain__cont--infTop--hTop--citem--cm--m--link">¿Por qué Memopay?</button>
 					</li>
 					<li class="cMain__cont--infTop--hTop--citem--cm--m--item">
-						<a href="javascript:void(0);" class="cMain__cont--infTop--hTop--citem--cm--m--link">Beneficios</a>
+						<button type="button" class="cMain__cont--infTop--hTop--citem--cm--m--link">Beneficios</button>
 					</li>
 					<li class="cMain__cont--infTop--hTop--citem--cm--m--item">
-						<a href="javascript:void(0);" class="cMain__cont--infTop--hTop--citem--cm--m--link">FAQ</a>
+						<button type="button" class="cMain__cont--infTop--hTop--citem--cm--m--link">FAQ</button>
 					</li>
 					<li class="cMain__cont--infTop--hTop--citem--cm--m--rcInfoitem">
 						<span class="cMain__cont--infTop--hTop--citem--cm--m--rcInfoitem--Thours">Horario</span>

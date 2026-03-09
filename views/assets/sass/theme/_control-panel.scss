@@ -246,6 +246,11 @@ $top-header-desktop: 85px;
 						color: var(--bg-color-dcli-sideLeft-link);
 						font-weight: 600;
 						transition: .2s ease-in-out;
+						width: 100%;
+						background-color: transparent;
+						border: unset;
+						text-align: left;
+						cursor: pointer;
 						&__cIcon{
 							max-width: 24px;
 							width: auto;

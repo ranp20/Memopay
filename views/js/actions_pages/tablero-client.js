@@ -75,7 +75,7 @@ function listTransactionsByIdClient_tablero(){
 								<p>${v.prefijorequest} ${valFormat}</p>
 							</div>
 						</div>
-						<a href="javascript:void(0);" class="cControlP__cont--containDash--c--cCDashboard--cLeftBoxsLandscape--cLastChange--cList--m--item--showDetail">Ver más</a>
+						<button type="button" class="cControlP__cont--containDash--c--cCDashboard--cLeftBoxsLandscape--cLastChange--cList--m--item--showDetail">Ver más</button>
 					</li>
 				`;
 			});

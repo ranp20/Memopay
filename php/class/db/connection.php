@@ -23,7 +23,7 @@
 		// CONFIGURACIÓN - LOCALHOST
 		protected $con = null;
 		// private $host = "localhost";
-		private $host = "127.0.0.1:3309";
+		private $host = "127.0.0.1:3307";
 		private $dbname = "db_memopay";
 		private $username = "root";
 		private $password = "";

@@ -8,33 +8,34 @@
 					</a>
 					<p class="cFooter--contT--c--sec--c--text">Somos la startup financiera que revoluciona la forma de administrar el dinero a través de una plataforma 100% digital.</p>
 					<div class="cFooter--contT--c--sec--c--cIcon">
-						<a href="javascript:void(0);" class="cFooter--contT--c--sec--c--cIcon--link" title="Instagram">
+						<button type="button" class="cFooter--contT--c--sec--c--cIcon--link" title="Instagram">
 							<img class="cFooter--contT--c--sec--c--cIcon--link--icon" src="<?= $url; ?>views/assets/img/icons/instagram.svg" alt="" width="100" height="100">
-						</a>
-						<a href="javascript:void(0);" class="cFooter--contT--c--sec--c--cIcon--link" title="Facebook">
+						</button>
+						<button type="button" class="cFooter--contT--c--sec--c--cIcon--link" title="Facebook">
 							<img class="cFooter--contT--c--sec--c--cIcon--link--icon" src="<?= $url; ?>views/assets/img/icons/facebook.svg" alt="" width="100" height="100">
-						</a>
-						<a href="javascript:void(0);" class="cFooter--contT--c--sec--c--cIcon--link" title="Linkedin">
+						</button>
+						<button type="button" class="cFooter--contT--c--sec--c--cIcon--link" title="Linkedin">
 							<img class="cFooter--contT--c--sec--c--cIcon--link--icon" src="<?= $url; ?>views/assets/img/icons/linkedin.svg" alt="" width="100" height="100">
-						</a>
+						</button>
 					</div>
 				</div>
 				<div class="cFooter--contT--c--sec--c">
 					<h3 class="cFooter--contT--c--sec--c--title">Menú</h3>
 					<ul class="cFooter--contT--c--sec--c--m">
 						<li class="cFooter--contT--c--sec--c--m--item">
-							<a href="javascript:void(0);" id="" class="cFooter--contT--c--sec--c--m--link" title="Nosotros">Nosotros</a>
+							<button type="button" id="" class="cFooter--contT--c--sec--c--m--link" title="Nosotros">Nosotros</button>
 						</li>
 						<li class="cFooter--contT--c--sec--c--m--item">
-							<a href="javascript:void(0);" id="" class="cFooter--contT--c--sec--c--m--link" title="Contacto">Contacto</a>
+							<button type="button" id="" class="cFooter--contT--c--sec--c--m--link" title="Contacto">Contacto</button>
 						</li>
 						<li class="cFooter--contT--c--sec--c--m--item">
-							<a href="javascript:void(0);" id="" class="cFooter--contT--c--sec--c--m--link" title="Preguntas frecuentes">Preguntas frecuentes</a>
+							<button type="button" id="" class="cFooter--contT--c--sec--c--m--link" title="Preguntas frecuentes">Preguntas frecuentes</button>
 						</li>
 						<li class="cFooter--contT--c--sec--c--m--item">
-							<a href="javascript:void(0);" id="" class="cFooter--contT--c--sec--c--m--link" title="Atención al usuario">
-								<img src="<?= $url; ?>views/assets/img/icons/whatsapp.svg" alt="" width="100" height="100">Atención al usuario</a>
-							</li>
+							<button type="button" id="" class="cFooter--contT--c--sec--c--m--link" title="Atención al usuario">
+								<img src="<?= $url; ?>views/assets/img/icons/whatsapp.svg" alt="" width="100" height="100">Atención al usuario
+							</button>
+						</li>
 					</ul>
 				</div>
 				<div class="cFooter--contT--c--sec--c">
@@ -47,7 +48,7 @@
 							<a href="politicas-de-privacidad" id="" class="cFooter--contT--c--sec--c--m--link" title="Políticas de privacidad">Políticas de privacidad</a>
 						</li>
 						<li class="cFooter--contT--c--sec--c--m--item">
-							<a href="javascript:void(0);" id="" class="cFooter--contT--c--sec--c--m--link" title="Libro de reclamaciones">Libro de reclamaciones</a>
+							<button type="button" id="" class="cFooter--contT--c--sec--c--m--link" title="Libro de reclamaciones">Libro de reclamaciones</a>
 						</li>
 					</ul>
 				</div>
@@ -55,15 +56,15 @@
 					<h3 class="cFooter--contT--c--sec--c--title">Datos de contacto</h3>
 					<ul class="cFooter--contT--c--sec--c--m">
 						<li class="cFooter--contT--c--sec--c--m--item">
-							<!-- <a href="javascript:void(0);" id="" class="cFooter--contT--c--sec--c--m--link" title="contacto@memopay.net">contacto@memopay.net</a> -->
+							<!-- <button type="button" id="" class="cFooter--contT--c--sec--c--m--link" title="contacto@memopay.net">contacto@memopay.net</a> -->
 							<span class="cFooter--contT--c--sec--c--m--txt">contacto@memopay.net</span>
 						</li>
 						<li class="cFooter--contT--c--sec--c--m--item">
-							<!-- <a href="javascript:void(0);" id="" class="cFooter--contT--c--sec--c--m--link">Lunes a Viernes 9 a.m - 7 p.m</a> -->
+							<!-- <button type="button" id="" class="cFooter--contT--c--sec--c--m--link">Lunes a Viernes 9 a.m - 7 p.m</a> -->
 							<span class="cFooter--contT--c--sec--c--m--txt">Lunes a Viernes 9 a.m - 7 p.m</span>
 						</li>
 						<li class="cFooter--contT--c--sec--c--m--item">
-							<!-- <a href="javascript:void(0);" id="" class="cFooter--contT--c--sec--c--m--link">Sábados y Feriados 9 a.m - 2.30 p.m</a> -->
+							<!-- <button type="button" id="" class="cFooter--contT--c--sec--c--m--link">Sábados y Feriados 9 a.m - 2.30 p.m</a> -->
 							<span class="cFooter--contT--c--sec--c--m--txt">Sábados y Feriados 9 a.m - 2.30 p.m</span>
 						</li>
 					</ul>

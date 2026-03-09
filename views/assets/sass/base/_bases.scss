@@ -32,8 +32,10 @@
 		--theme_color-text-frm-label: #7D858F;
     --bkg-color: #010409;
 		--bg-color-main: #010409;
-		--bg-color-main-sections-bg-1: #0D1117;
-		--bg-color-main-sections-bg-2: #0D1117;
+		// --bg-color-main-sections-bg-1: #0D1117;
+		--bg-color-main-sections-bg-1: #151a23;
+		// --bg-color-main-sections-bg-2: #0D1117;
+		--bg-color-main-sections-bg-2: #151a23;
 		--bg-color-main-sections-border-1: #21262D;
 		--bg-color-main-sections-shadow-1: 0 4px 3px 0 #0A0A0A;
 		--bg-color-main-sections-select-1: #30363D;
@@ -46,7 +48,8 @@
 		--theme_color-button-shadow: 0 4px 3px 0 #0A0A0A;
 		/* VARIABLES PARA EL PANEL DEL CLIENTE */
 		--bg-color-dcli-main: #010409;
-		--bg-color-dcli-sections-bg-1: #0d1117;
+		// --bg-color-dcli-sections-bg-1: #0d1117;
+		--bg-color-dcli-sections-bg-1: #151a23;
 		--bg-color-dcli-sections-title-1: #fff;
 		--bg-color-dcli-sections-link-1: #fff;
 		--bg-color-dcli-sections-border-1: #21262D;
@@ -177,7 +180,8 @@ body.dark-theme{
 	--theme_color-text-frm-label: #7D858F;
   --bkg-color: #010409;
 	--bg-color-main: #010409;
-	--bg-color-main-sections-bg-1: #0D1117;
+	// --bg-color-main-sections-bg-1: #0D1117;
+	--bg-color-main-sections-bg-1: #151a23;
 	--bg-color-main-sections-border-1: #21262D;
 	--bg-color-main-sections-shadow-1: 0 4px 3px 0 #0A0A0A;
 	--bg-color-main-sections-select-1: #30363D;
@@ -190,8 +194,10 @@ body.dark-theme{
 	--theme_color-button-shadow: 0 4px 3px 0 #0A0A0A;
 	/* VARIABLES PARA EL PANEL DEL CLIENTE */
 	--bg-color-dcli-main: #010409;
-	--bg-color-dcli-sections-bg-1: #0d1117;
-	--bg-color-main-sections-bg-2: #0D1117;
+	// --bg-color-dcli-sections-bg-1: #0d1117;
+	--bg-color-dcli-sections-bg-1: #151a23;
+	// --bg-color-main-sections-bg-2: #0D1117;
+	--bg-color-main-sections-bg-2: #151a23;
 	--bg-color-dcli-sections-title-1: #fff;
 	--bg-color-dcli-sections-link-1: #fff;
 	--bg-color-dcli-sections-border-1: #21262D;
@@ -205,6 +211,12 @@ body.dark-theme{
 	--bg-color-dcli-sideRight: #0D1117;
 	/* VARIABLES PARA SWEETALERT2 */
 	--theme_color-plugin-swal2-title: #fff;
+	p, span{
+		color: #9198a1;
+	}
+	#genCont-cli-dashboard .cControlP__cont--containDash--c--cCDashboard--cLeftBoxsLandscape--cLastChange--cList--m--item--itemanybanks--desc{
+		color: #9198a1;
+	}
 }
 body{
   background-color: var(--bkg-color) !important;

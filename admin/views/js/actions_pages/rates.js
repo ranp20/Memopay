@@ -1,6 +1,9 @@
 $(function(){
   listRates();
 });
+var locationthisGET = window.location.href;
+var domainthisGET = new URL(locationthisGET).origin;
+var domainByControllers = domainthisGET+"/admin/";
 // ------------ FUNCIÓN - LIMITAR A DOS DECIMALES SIN REDONDEO
 function fourdecimals(n) {
   let t = n.toString();
@@ -14,7 +17,7 @@ $(document).on("input","input[data-valformat='fourdecimal']",function(e){
 // ------------ LISTAR TARIFAS
 function listRates(){
   $.ajax({
-    url: "../admin/controllers/c_list-rates.php",
+    url: domainbyadm.controllers+"c_list-rates.php",
     method: "POST",
     datatype: "JSON",
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -49,7 +52,7 @@ $(document).on("submit", "#frm-updateval_rates", function(e){
   frmdata.append("sell_at", $("#sell_at").val());
   frmdata.append("id", $(".dataval-item").attr("dataval-id"));
   $.ajax({
-    url: "../admin/controllers/c_update-rates.php",
+    url: domainbyadm.controllers+"c_update-rates.php",
     method: "POST",
     data: frmdata,
     contentType: false,

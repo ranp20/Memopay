@@ -69,14 +69,14 @@ if(!empty($_COOKIE['prjMemopay-theme'])){
             <a href="recover-password" class="cLogin__cont--fLogin--form--cBtnsActions--recovPass">¿Olvidaste tu contraseña?</a>
             <button class="cLogin__cont--fLogin--form--cBtnsActions--btnLogin" id="btn-loginCliMemopay" type="submit">Ingresar</button>
             <!-- 
-            <a href="javascript:void(0);" id="btnLognWithGoogleAuth" class="cLogin__cont--fLogin--form--cBtnsActions--btnLoginWithGoogle">
+            <button type="button" id="btnLognWithGoogleAuth" class="cLogin__cont--fLogin--form--cBtnsActions--btnLoginWithGoogle">
               <span class="cLogin__cont--fLogin--form--cBtnsActions--btnLoginWithGoogle__cIcon">
                 <img src="<?= $url; ?>views/assets/img/svg/google_icon-Instakash.svg" alt="logo_google">
               </span>
               <span class="cLogin__cont--fLogin--form--cBtnsActions--btnLoginWithGoogle__cTxt">
                 <span>Acceder con Google</span>
               </span>
-            </a>
+            </button>
              -->
             <p class="cLogin__cont--fLogin--form--cBtnsActions--btnAccount">¿Eres nuevo en Memopay?<a href="signup" class="cLogin__cont--fLogin--form--cBtnsActions--btnAccount--link">Regístrate</a></p>
           </div>

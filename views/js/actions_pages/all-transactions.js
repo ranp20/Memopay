@@ -60,9 +60,9 @@ let listAllTransactions = () => {
 				}
       },
       {"render": function ( data, type, row ) {
-	      return `<a href="javascript:void(0);" data-id="${row.id}" class="btn_ItemEditReg cControlP__cont--containDash--c--cCDashboard--cLeftBoxsLandscape--cLastChange--cList--m--item--showDetail">
+	      return `<button type="button" data-id="${row.id}" class="btn_ItemEditReg cControlP__cont--containDash--c--cCDashboard--cLeftBoxsLandscape--cLastChange--cList--m--item--showDetail">
 	      					<span class="hidden-xs"> Ver más</span>
-	      				</a>`;
+	      				</button>`;
 	    }},
 		],
 		"language":{

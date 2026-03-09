@@ -1,10 +1,13 @@
 $(function(){
   listCoupons();
 });
+var locationthisGET = window.location.href;
+var domainthisGET = new URL(locationthisGET).origin;
+var domainByControllers = domainthisGET+"/admin/";
 var buy_at_original = "";
 var sell_at_original = "";
 $.ajax({
-  url: "../admin/controllers/c_list-rates.php",
+  url: domainbyadm.controllers+"c_list-rates.php",
   method: "POST",
   datatype: "JSON",
   contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -190,7 +193,7 @@ $(document).on('submit', '#form-add-coupon', function(e){
   formdata.append("type_scope", $("#chck_typescopecoupon").val());
   formdata.append("activation", $("#chck_stactivactioncoupon").val());
   $.ajax({
-    url: "../admin/controllers/c_add-coupon.php",
+    url: domainbyadm.controllers+"c_add-coupon.php",
     method: "POST",
     data: formdata,
     contentType: false,
@@ -249,7 +252,7 @@ $(document).on('submit', '#form-add-coupon', function(e){
 // ------------ LISTAR RESULTADOS
 function listCoupons(searchVal){ 
   $.ajax({
-    url: "../admin/controllers/c_list-coupons.php",
+    url: domainbyadm.controllers+"c_list-coupons.php",
     method: "POST",
     datatype: "JSON",
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -443,7 +446,7 @@ $(document).on('submit', '#form-update-coupon', function(e){
   formdata.append("id", $('#idupdate-coupon').val());
 
   $.ajax({
-    url: "../admin/controllers/c_update-coupon.php",
+    url: domainbyadm.controllers+"c_update-coupon.php",
     method: "POST",
     data: formdata,
     contentType: false,
@@ -503,7 +506,7 @@ $(document).on('click', '#btndelete-coupon', function(e){
   e.preventDefault();
 	var id = $('#iddelete-coupon').val();
   $.ajax({
-    url: "../admin/controllers/c_delete-coupon.php",
+    url: domainbyadm.controllers+"c_delete-coupon.php",
     method: "POST",
     data: {id : id},
   }).done((e) => {

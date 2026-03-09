@@ -1,164 +1,71 @@
-// ------------ TOGGLE HEADERTOP 
-function showHeader(){
-	let headerTop = $('#headerTop-info');
-	let scrollTop = document.documentElement.scrollTop;
-	let heroImageClass = $('#fromHereFixedHeadTop');
-	let logotype = $(".cMain__cont--infTop--hTop--citem--cLogo--logo");
-	let heightHeroImage = heroImageClass.offsetTop;
+// ============ HEADER SCROLL BEHAVIOR ============
+const headerTop = document.getElementById('headerTop-info');
+const logotype = document.querySelector('.cMain__cont--infTop--hTop--citem--cLogo--logo');
 
-	if(heightHeroImage - 78 < scrollTop ){
-		headerTop.addClass("reduxheight");
-		logotype.addClass("sizeadd");
-	}else{
-		headerTop.removeClass("reduxheight");
-		logotype.removeClass("sizeadd");
-	}
+function showHeader() {
+  const heroImage = document.getElementById('fromHereFixedHeadTop');
+  // Compara si el scroll actual supera el umbral del hero (offsetTop - altura del header)
+  const shouldReduce = heroImage.offsetTop - 78 < document.documentElement.scrollTop;
+  // Agrega o quita clases según la condición, sin necesidad de if/else
+  headerTop.classList.toggle('reduxheight', shouldReduce);
+  logotype.classList.toggle('sizeadd', shouldReduce);
 }
+
 document.addEventListener('scroll', showHeader);
-// ------------ TOGGLE MENU INTO HEADERTOP
-$(document).on("click","#m-show-hpage",function(){
-	$("#main-m-htop").toggleClass("show");
-});
-localStorage.clear();
-	
-document.body.addEventListener("load",(e) => {
-	if(e.target.tagName != "img"){
-	  return;
-	}
-	// Remove the blurry placeholder.
-	e.target.style.backgroundImage = "none";
-},true);
 
-$(() => {
-	/*
-	const myCookieName = "prjMemopay-theme";
-  const defaultValue = "light";
-  const currentValue = setDefaultCookieValue(myCookieName, defaultValue);
-	// ------------ Función para establecer un valor predeterminado si la cookie no existe
-	function setDefaultCookieValue(cookieName, defaultValue) {
-		const existingValue = getCookie(cookieName);
-		if (existingValue === null) {
-			createPersistentCookie(cookieName, defaultValue);
-			return defaultValue;
-		}
-		return existingValue;
-	}
-	// ------------ CREAR UNA COOKIE PERSISTENTE
-	function createPersistentCookie(cookieName, cookieValue){
-		const expirationDate = new Date();
-		// expirationDate.setFullYear(expirationDate.getFullYear() + 10); // AÑOS
-		// expirationDate.setMonth(expirationDate.getMonth() + 3); // MESES
-		// expirationDate.setHours(expirationDate.getHours() + 5); // HORAS
-		expirationDate.setMinutes(expirationDate.getMinutes() + 2); // MINUTOS
-		const expires = expirationDate.toGMTString();
-		document.cookie = `${cookieName}=${cookieValue}; expires=${expires}; path=/`;
-	}
-	// ------------ VALIDAR LA EXISTENCIA DE LA COOKIE Y VOLVERLA A CREAR
-	function resetPersistentCookie(cookieName, cookieValue){
-		if(getCookie(cookieName)){
-			deleteCookie(cookieName);
-		}
-		createPersistentCookie(cookieName, cookieValue);
-	}
-	// ------------ OBTENER LA COOKIE
-	function getCookie(cookieName){
-		const name = `${cookieName}=`;
-		const cookies = document.cookie.split(';');
-		for(const cookie of cookies){
-			let trimmedCookie = cookie.trim();
-			if(trimmedCookie.indexOf(name) === 0){
-				return trimmedCookie.substring(name.length, trimmedCookie.length);
-			}
-		}
-		return null;
-	}
-	// ------------ ELIMINAR LA COOKIE
-	function deleteCookie(cookieName){
-		const expirationDate = new Date(0).toGMTString(); // Set an expiration date in the past
-		document.cookie = `${cookieName}=; expires=${expirationDate}; path=/`;
-	}
-	*/
-	let myasCookieName = "prjMemopay-theme";
-	function setDefaultCookieValue(cookieName, defaultValue) {
-		// console.log(cookieName);
-		const existingValue = getCookie(cookieName);
-		// console.log(getCookie(existingValue));
-		// let cookieValue = "";
-		// if (existingValue === null) {
-		// 	createPersistentCookie(cookieName, defaultValue);
-		// 	return defaultValue;
-		// }else{
 
-		// }
-		return existingValue;
-	}
-	function updateCookieValueAndDisplay(cookieName, newValue){
-		const previousValue = getCookie(cookieName);
-		createPersistentCookie(`${cookieName}_previous`, previousValue);
-		createPersistentCookie(cookieName, newValue);
-	}
-	function createPersistentCookie(cookieName, cookieValue) {
-		const expirationDate = new Date();
-		expirationDate.setFullYear(expirationDate.getFullYear() + 10);
-		const expires = expirationDate.toGMTString();
-		document.cookie = `${cookieName}=${cookieValue}; expires=${expires}; path=/`;
-	}
-	function getCookie(cookieName) {
-		const name = `${cookieName}=`;
-		const cookies = document.cookie.split(';');
-		for (const cookie of cookies) {
-			let trimmedCookie = cookie.trim();
-			if (trimmedCookie.indexOf(name) === 0) {
-				return trimmedCookie.substring(name.length, trimmedCookie.length);
-			}
-		}
-		return null;
-	}
-	function deleteCookie(cookieName) {
-		const expirationDate = new Date(0).toGMTString(); // Set an expiration date in the past
-		document.cookie = `${cookieName}=; expires=${expirationDate}; path=/`;
-	}
-	document.addEventListener("DOMContentLoaded", function () {
-		setDefaultCookieValue(myCookieName, defaultValue);
-		const previousValue = getCookie(`${myCookieName}_previous`);
-		if (previousValue !== null) {
-			createPersistentCookie(myCookieName, previousValue);
-		}
-	});
-	const myCookieName = "prjMemopay-theme";
-	const defaultValue = "light";
-	setDefaultCookieValue(myCookieName, defaultValue);
+// ============ TOGGLE MOBILE MENU ============
+document.getElementById('m-show-hpage')
+  ?.addEventListener('click', () => document.getElementById('main-m-htop')?.classList.toggle('show'));
 
-	// ------------ CAMBIAR ENTRE TEMAS - LIGHT/DARK
-	const $btn = document.querySelector("#darkmode-toggle");
-  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");  
-	$(document).on("click","#darkmode-toggle",function(){
-		if(prefersDarkScheme.matches){
-			if($(this).is(':checked')){
-				if($('body').hasClass('dark-theme')){
-					$('body').removeClass('dark-theme');
-					$('body').addClass('light-theme');
-					var theme = $('body').hasClass("dark-theme") ? "dark" : "light";
-				}else{
-					$('body').removeClass('light-theme');
-					$('body').addClass('dark-theme');
-					var theme = $('body').hasClass("dark-theme") ? "dark" : "light";
-				}
-			}else{
-				if($('body').hasClass('dark-theme')){
-					$('body').removeClass('dark-theme');
-					$('body').addClass('light-theme');
-					var theme = $('body').hasClass("dark-theme") ? "dark" : "light";
-				}else{
-					$('body').removeClass('light-theme');
-					$('body').addClass('dark-theme');
-					var theme = $('body').hasClass("dark-theme") ? "dark" : "light";
-				}
-			}
-		}
-		const myCookieName = "prjMemopay-theme";
-		const myCookieValue = theme;
-		updateCookieValueAndDisplay(myCookieName, myCookieValue);
-		// document.cookie = "prjMemopay-theme=" + theme;
-	});
-});
+
+// ============ LAZY IMAGE LOAD (remove blur placeholder) ============
+document.body.addEventListener('load', (e) => {
+  // Solo actúa si el elemento que terminó de cargar es una imagen
+  if (e.target.tagName === 'IMG') e.target.style.backgroundImage = 'none';
+}, true); // "true" = usa capture para interceptar el evento antes de que llegue al target
+
+
+// ============ COOKIE UTILS ============
+const Cookie = {
+  get: (name) => {
+    // Busca en todas las cookies la que coincida con el nombre dado
+    const match = document.cookie.split(';').find(c => c.trim().startsWith(`${name}=`));
+    // Si la encuentra, extrae solo el valor (después del "nombre="); si no, retorna null
+    return match ? match.trim().slice(name.length + 1) : null;
+  },
+  set: (name, value, years = 10) => {
+    // Calcula la fecha de expiración sumando los años indicados (default: 10)
+    const expires = new Date();
+    expires.setFullYear(expires.getFullYear() + years);
+    document.cookie = `${name}=${value}; expires=${expires.toGMTString()}; path=/`;
+  },
+  delete: (name) => {
+    // Sobreescribe la cookie con una fecha expirada en el pasado para eliminarla
+    document.cookie = `${name}=; expires=${new Date(0).toGMTString()}; path=/`;
+  }
+};
+
+
+// ============ DARK / LIGHT THEME ============
+const THEME_COOKIE = 'prjMemopay-theme';
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+function applyTheme(theme) {
+  // classList.toggle con segundo argumento booleano agrega la clase si es true, la quita si es false
+  // Así se evita tener que hacer removeClass + addClass manualmente
+  document.body.classList.toggle('dark-theme', theme === 'dark');
+  document.body.classList.toggle('light-theme', theme === 'light');
+  Cookie.set(THEME_COOKIE, theme);
+}
+
+// Prioridad: cookie guardada → preferencia del sistema → 'light' por defecto
+const savedTheme = Cookie.get(THEME_COOKIE) ?? (prefersDark ? 'dark' : 'light');
+applyTheme(savedTheme);
+
+document.getElementById('darkmode-toggle')
+  ?.addEventListener('change', function () {
+    const current = Cookie.get(THEME_COOKIE);
+    // Alterna entre dark y light leyendo el valor actual de la cookie
+    applyTheme(current === 'dark' ? 'light' : 'dark');
+  });

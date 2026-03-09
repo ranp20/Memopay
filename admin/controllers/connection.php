@@ -11,15 +11,18 @@ $dbname = "micambis_db_micambista";
 $usuario = "micambis_use_micambista";
 $password = "D^_~M)O%[K&#";
 */
-//CONFIGURACIÓN - LOCALHOST
 
-$servidor = "localhost";
+// CONFIGURACIÓN - LOCALHOST
+$con = null;
+// private $host = "localhost";
+$host = "127.0.0.1:3307";
 $dbname = "db_memopay";
-$usuario = "root";
+$username = "root";
 $password = "";
+$charset = "utf8";
 
 try {
-  $con = new PDO("mysql:host=$servidor;dbname=$dbname",$usuario,$password,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+  $con = new PDO("mysql:host={$host}; dbname={$dbname}; charset={$charset}", $username, $password);
   $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }catch(PDOException $e){
 	echo "La conexión ha fallado: " . $e->getMessage();

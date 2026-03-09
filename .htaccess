@@ -1,7 +1,8 @@
 RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-RewriteBase /Memopay/
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}:4433%{REQUEST_URI} [L,R=301]
+RewriteBase /
 
 ############RENAME PRINCIPAL FILES
 RewriteRule ^/?$ index.php
@@ -42,4 +43,4 @@ RewriteRule change-profile?$ php/process_unset-profile-select.php
 
 ############# MENSAJE DE ERROR PERSONALIZADO
 #RewriteRule 404?$ views/404.php
-ErrorDocument 404 /views/404.php
+#ErrorDocument 404 /views/404.php

@@ -1,6 +1,9 @@
 $(() => {
 	listAllTransactions();
 });
+var locationthisGET = window.location.href;
+var domainthisGET = new URL(locationthisGET).origin;
+var domainByControllers = domainthisGET+"/admin/";
 $(document).on('change', '#selOpts-OperationsFilter', function(e){
   var optionSel = $(this).find("option:selected").attr("data-short");
   var optionSelText = $(this).find("option:selected").text();
@@ -32,7 +35,7 @@ var listAllTransactions = (optionSel = null) => {
 	var tblOperations = $("#tbl_operations").DataTable({
 		"destroy": true,
 		"ajax":{
-			"url": "../admin/controllers/c_list-operations_byTypeFilter.php",
+			"url": domainbyadm.controllers+"c_list-operations_byTypeFilter.php",
 			"data": { option : optionSel },
     	"type": "POST",
 		},
@@ -375,7 +378,7 @@ $(document).on("click", "#c-allActionsButtons button", function(){
 function listUpdateItems(listAllItems, action){
 	var optionSel = $("#selOpts-OperationsFilter option:selected").attr("data-short");
 	$.ajax({
-		url: "../admin/controllers/c_update-operations.php",
+		url: domainbyadm.controllers+"c_update-operations.php",
 		type: "POST",
 		dataType: "JSON",
 		data: { id_list : JSON.stringify($('[name="operations[]"]').serializeArray()), action : action},
@@ -439,7 +442,7 @@ $(document).on('click', '.btn-details-transaction', function(e){
 // ------------ LISTAR DETALLE DE TRANSACCIÓN POR ID
 function listDetailsByIdTransac(idtrans){
 	$.ajax({
-		url: "../admin/controllers/c_list-detailsTransaction-byIdTrans.php",
+		url: domainbyadm.controllers+"c_list-detailsTransaction-byIdTrans.php",
 		type: "POST",
 		dataType: "JSON",
 		data: { id_transaction : idtrans},

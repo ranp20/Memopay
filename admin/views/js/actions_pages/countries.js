@@ -1,6 +1,9 @@
 $(function(){
   listCountries();
 });
+var locationthisGET = window.location.href;
+var domainthisGET = new URL(locationthisGET).origin;
+var domainByControllers = domainthisGET+"/admin/";
 // ------------ AGREGAR PAÍS
 $(document).on('click', '#btnadd-country', function(e){
   e.preventDefault();
@@ -12,7 +15,7 @@ $(document).on('click', '#btnadd-country', function(e){
   formdata.append("name", $('#name').val());
   formdata.append("prefix", $('#prefix').val());
   $.ajax({
-    url: "../admin/controllers/c_add-country.php",
+    url: domainbyadm.controllers+"c_add-country.php",
     method: "POST",
     data: formdata,
     contentType: false,
@@ -31,7 +34,7 @@ $(document).on('click', '#btnadd-country', function(e){
 // ------------ LISTAR PAÍSES
 function listCountries(searchVal){ 
   $.ajax({
-    url: "../admin/controllers/c_list-countries.php",
+    url: domainbyadm.controllers+"c_list-countries.php",
     method: "POST",
     datatype: "JSON",
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -126,7 +129,7 @@ $(document).on('submit', '#form-update-country', function(e){
   formdata.append("id", $('#idupdate-country').val());
 
   $.ajax({
-    url: "../admin/controllers/c_update-country.php",
+    url: domainbyadm.controllers+"c_update-country.php",
     method: "POST",
     data: formdata,
     contentType: false,
@@ -152,7 +155,7 @@ $(document).on('click', '#btndelete-country', function(e){
   e.preventDefault();
 	var id = $('#iddelete-country').val();
   $.ajax({
-    url: "../admin/controllers/c_delete-country.php",
+    url: domainbyadm.controllers+"c_delete-country.php",
     method: "POST",
     data: {id : id},
   }).done((e) => {
